@@ -1,0 +1,44 @@
+//quest No4//
+public class MaxElement {
+    public int maxElement(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array is empty");
+        }
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        MaxElement solution = new MaxElement();
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(solution.maxElement(arr));  // 5
+    }
+}
+//quest NO5//
+
+
+public class ReverseString {
+    public String reverseString(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            stack.push(c);
+        }
+        StringBuilder reversedStr = new StringBuilder();
+        while (!stack.isEmpty()) {
+            reversedStr.append(stack.pop());
+        }
+        return reversedStr.toString();
+    }
+
+    public static void main(String[] args) {
+
+        ReverseString solution = new ReverseString();
+        System.out.println(solution.reverseString("hello"));  // "olleh"
+    }
+}
+
